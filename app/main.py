@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-URL = "http://api.weatherapi.com/v1/current.json"
+API_URL = "http://api.weatherapi.com/v1/current.json"
 
 CITY = "Paris"
 
@@ -15,7 +15,7 @@ def get_weather() -> None:
         payload = {"key": api_key,
                    "q": CITY}
         res = requests.get(
-            URL,
+            API_URL,
             params=payload
         )
         json_data = res.json()
@@ -24,7 +24,8 @@ def get_weather() -> None:
         print(f"швидкість вітру {json_data["current"]["wind_kph"]}")
         print(f"напрямок вітру {json_data["current"]["wind_dir"]} ")
     else:
-        print("API KEY NOT FOUND")
+        print("Error: API key is missing.")
+        exit(1)
 
 
 if __name__ == "__main__":
