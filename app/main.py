@@ -14,10 +14,10 @@ def get_weather() -> None:
         params=payload
     )
     json_data = res.json()
-    print(f"Зараз в парижі: {json_data["current"]["condition"]["text"]} "
-          f"температура повітря {json_data["current"]["temp_c"]} "
-          f"швидкість вітру {json_data["current"]["wind_kph"]} "
-          f"напрямок вітру {json_data["current"]["wind_dir"]} ")
+    print(f"Зараз в парижі: {json_data["current"]["condition"]["text"]}")
+    print(f"температура повітря {json_data["current"]["temp_c"]}")
+    print(f"швидкість вітру {json_data["current"]["wind_kph"]}")
+    print(f"напрямок вітру {json_data["current"]["wind_dir"]} ")
 
 
 if __name__ == "__main__":
